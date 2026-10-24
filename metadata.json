@@ -1,0 +1,6 @@
+{
+  "name": "ClimateLens",
+  "description": "Climate intelligence you can understand, verify, and act on. Track 4 — Climate Data & Environmental Monitoring for IEEE ClimateChain 2026.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

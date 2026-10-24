@@ -1,0 +1,1397 @@
+{
+  "sources": [
+    {
+      "id": "src-open-meteo",
+      "name": "Open-Meteo Weather Model Suite",
+      "category": "forecast",
+      "sourceUrl": "https://open-meteo.com",
+      "attribution": "Weather data provided by Open-Meteo under CC BY 4.0 (models: ECMWF IFS, DWD ICON, GFS)",
+      "geographicCoverage": "Global (90°N - 90°S, 180°W - 180°E at 0.1° resolution)",
+      "updateFrequency": "Hourly (model cycles refreshed every 1 to 3 hours)",
+      "enabled": true,
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "src-copernicus-era5",
+      "name": "Copernicus Climate Change Service (ERA5)",
+      "category": "reanalysis",
+      "sourceUrl": "https://climate.copernicus.eu",
+      "attribution": "Contains modified Copernicus Climate Change Service information (2026)",
+      "geographicCoverage": "Global atmosphere, land surface, and ocean wave historical reanalysis",
+      "updateFrequency": "Monthly consolidated reanalysis with 5-day preliminary release",
+      "enabled": true,
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "src-imd-official",
+      "name": "India Meteorological Department (IMD) Reference Portal",
+      "category": "official_advisory",
+      "sourceUrl": "https://mausam.imd.gov.in",
+      "attribution": "Ministry of Earth Sciences, Government of India (Official Portal Reference)",
+      "geographicCoverage": "National / South Asia regional sub-divisions and meteorological zones",
+      "updateFrequency": "Official bulletins issued 4x daily (0300, 0830, 1130, 1730 IST)",
+      "enabled": true,
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    }
+  ],
+  "evidence_snapshots": [
+    {
+      "id": "ev-seed-chennai-01",
+      "sourceId": "src-open-meteo",
+      "sourceName": "Open-Meteo Weather Model Suite",
+      "dataType": "weather_surface",
+      "locationReference": "Chennai, Tamil Nadu, India",
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "canonicalPayload": "{\"location\":{\"label\":\"Chennai, Tamil Nadu, India\",\"latitude\":13.0827,\"longitude\":80.2707},\"measurements\":{\"apparent_temperature_celsius\":36.2,\"precipitation_mm\":0,\"relative_humidity_percent\":68,\"surface_pressure_hpa\":1011.4,\"temperature_celsius\":31.8,\"weather_code\":1,\"wind_speed_kmh\":18.4},\"qualityAssessment\":{\"completeness\":\"complete\",\"freshness\":\"fresh\"},\"source\":{\"attribution\":\"Weather data provided by Open-Meteo under CC BY 4.0\",\"category\":\"forecast\",\"model\":\"ECMWF IFS / DWD ICON Ensemble\",\"provider\":\"Open-Meteo Weather Model Suite\"},\"timestamps\":{\"ingestionTime\":\"2026-10-16T08:00:00.000Z\",\"sourceObservationTime\":\"2026-10-16T07:45:00.000Z\"}}",
+      "sourceTimestamp": "2026-10-16T07:45:00.000Z",
+      "retrievedAt": "2026-10-16T08:00:00.000Z",
+      "validUntil": "2026-10-16T10:00:00.000Z",
+      "freshnessStatus": "fresh",
+      "freshnessReason": "Verified fresh: observed within operational threshold window.",
+      "completenessStatus": "complete",
+      "missingFields": [],
+      "contentHash": "6bbd71228602f05ec4f80cc44b1bc4af28cb9679009f6d6f59159f89ad044437",
+      "dataOrigin": "historical_archive",
+      "previousSnapshotId": null,
+      "createdAt": "2026-10-16T08:00:00.000Z"
+    },
+    {
+      "id": "ev-seed-chennai-02",
+      "sourceId": "src-open-meteo",
+      "sourceName": "Open-Meteo Weather Model Suite",
+      "dataType": "weather_surface",
+      "locationReference": "Chennai, Tamil Nadu, India",
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "canonicalPayload": "{\"location\":{\"label\":\"Chennai, Tamil Nadu, India\",\"latitude\":13.0827,\"longitude\":80.2707},\"measurements\":{\"apparent_temperature_celsius\":37.8,\"precipitation_mm\":0.2,\"relative_humidity_percent\":72,\"surface_pressure_hpa\":1010.8,\"temperature_celsius\":32.5,\"weather_code\":2,\"wind_speed_kmh\":21.2},\"qualityAssessment\":{\"completeness\":\"complete\",\"freshness\":\"fresh\"},\"source\":{\"attribution\":\"Weather data provided by Open-Meteo under CC BY 4.0\",\"category\":\"forecast\",\"model\":\"ECMWF IFS / DWD ICON Ensemble\",\"provider\":\"Open-Meteo Weather Model Suite\"},\"timestamps\":{\"ingestionTime\":\"2026-10-16T11:00:00.000Z\",\"sourceObservationTime\":\"2026-10-16T10:50:00.000Z\"}}",
+      "sourceTimestamp": "2026-10-16T10:50:00.000Z",
+      "retrievedAt": "2026-10-16T11:00:00.000Z",
+      "validUntil": "2026-10-16T13:00:00.000Z",
+      "freshnessStatus": "fresh",
+      "freshnessReason": "Verified fresh: observed within operational threshold window.",
+      "completenessStatus": "complete",
+      "missingFields": [],
+      "contentHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "dataOrigin": "live_provider",
+      "previousSnapshotId": "ev-seed-chennai-01",
+      "createdAt": "2026-10-16T11:00:00.000Z"
+    }
+  ],
+  "integrity_proofs": [
+    {
+      "id": "prf-sim-1792835836841",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Simulated Demo)",
+      "isSimulated": true,
+      "isRealOnChain": false,
+      "onChainStatus": "unsubmitted_simulated",
+      "statusNotice": "SIMULATED DEMONSTRATION: EVM RPC and signer keys are unconfigured. No transaction was broadcast to the network. Content integrity is maintained via deterministic local SHA-256 ledger.",
+      "verificationStatus": "local_only",
+      "registeredAt": "2026-10-24T09:57:16.837Z"
+    },
+    {
+      "id": "prf-sim-1792680171818",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Simulated Demo)",
+      "isSimulated": true,
+      "isRealOnChain": false,
+      "onChainStatus": "unsubmitted_simulated",
+      "statusNotice": "SIMULATED DEMONSTRATION: EVM RPC and signer keys are unconfigured. No transaction was broadcast to the network. Content integrity is maintained via deterministic local SHA-256 ledger.",
+      "verificationStatus": "local_only",
+      "registeredAt": "2026-10-22T14:42:51.818Z"
+    },
+    {
+      "id": "prf-sim-1792680042516",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Simulated Demo)",
+      "isSimulated": true,
+      "isRealOnChain": false,
+      "onChainStatus": "unsubmitted_simulated",
+      "statusNotice": "SIMULATED DEMONSTRATION: EVM RPC and signer keys are unconfigured. No transaction was broadcast to the network. Content integrity is maintained via deterministic local SHA-256 ledger.",
+      "verificationStatus": "local_only",
+      "registeredAt": "2026-10-22T14:40:42.515Z"
+    },
+    {
+      "id": "prf-sim-1792679183056",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Simulated Demo)",
+      "isSimulated": true,
+      "isRealOnChain": false,
+      "onChainStatus": "unsubmitted_simulated",
+      "statusNotice": "SIMULATED DEMONSTRATION: EVM RPC and signer keys are unconfigured. No transaction was broadcast to the network. Content integrity is maintained via deterministic local SHA-256 ledger.",
+      "verificationStatus": "local_only",
+      "registeredAt": "2026-10-22T14:26:23.056Z"
+    },
+    {
+      "id": "prf-sim-1792679140181",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Simulated Demo)",
+      "isSimulated": true,
+      "isRealOnChain": false,
+      "onChainStatus": "unsubmitted_simulated",
+      "statusNotice": "SIMULATED DEMONSTRATION: EVM RPC and signer keys are unconfigured. No transaction was broadcast to the network. Content integrity is maintained via deterministic local SHA-256 ledger.",
+      "verificationStatus": "local_only",
+      "registeredAt": "2026-10-22T14:25:40.181Z"
+    },
+    {
+      "id": "prf-sim-1792679094048",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Simulated Demo)",
+      "isSimulated": true,
+      "isRealOnChain": false,
+      "onChainStatus": "unsubmitted_simulated",
+      "statusNotice": "SIMULATED DEMONSTRATION: EVM RPC and signer keys are unconfigured. No transaction was broadcast to the network. Content integrity is maintained via deterministic local SHA-256 ledger.",
+      "verificationStatus": "local_only",
+      "registeredAt": "2026-10-22T14:24:54.047Z"
+    },
+    {
+      "id": "prf-sim-1792677900487",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Simulated Demo)",
+      "isSimulated": true,
+      "isRealOnChain": false,
+      "onChainStatus": "unsubmitted_simulated",
+      "statusNotice": "SIMULATED DEMONSTRATION: EVM RPC and signer keys are unconfigured. No transaction was broadcast to the network. Content integrity is maintained via deterministic local SHA-256 ledger.",
+      "verificationStatus": "local_only",
+      "registeredAt": "2026-10-22T14:05:00.486Z"
+    },
+    {
+      "id": "prf-sim-1792677741010",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Simulated Demo)",
+      "isSimulated": true,
+      "isRealOnChain": false,
+      "onChainStatus": "unsubmitted_simulated",
+      "statusNotice": "SIMULATED DEMONSTRATION: EVM RPC and signer keys are unconfigured. No transaction was broadcast to the network. Content integrity is maintained via deterministic local SHA-256 ledger.",
+      "verificationStatus": "local_only",
+      "registeredAt": "2026-10-22T14:02:21.010Z"
+    },
+    {
+      "id": "prf-sim-1792677683446",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Simulated Demo)",
+      "isSimulated": true,
+      "isRealOnChain": false,
+      "onChainStatus": "unsubmitted_simulated",
+      "statusNotice": "SIMULATED DEMONSTRATION: EVM RPC and signer keys are unconfigured. No transaction was broadcast to the network. Content integrity is maintained via deterministic local SHA-256 ledger.",
+      "verificationStatus": "local_only",
+      "registeredAt": "2026-10-22T14:01:23.446Z"
+    },
+    {
+      "id": "prf-sim-1792677594550",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Simulated Demo)",
+      "isSimulated": true,
+      "isRealOnChain": false,
+      "onChainStatus": "unsubmitted_simulated",
+      "statusNotice": "SIMULATED DEMONSTRATION: EVM RPC and signer keys are unconfigured. No transaction was broadcast to the network. Content integrity is maintained via deterministic local SHA-256 ledger.",
+      "verificationStatus": "local_only",
+      "registeredAt": "2026-10-22T13:59:54.550Z"
+    },
+    {
+      "id": "prf-sim-1792677159889",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Simulated Demo)",
+      "isSimulated": true,
+      "isRealOnChain": false,
+      "onChainStatus": "unsubmitted_simulated",
+      "statusNotice": "SIMULATED DEMONSTRATION: EVM RPC and signer keys are unconfigured. No transaction was broadcast to the network. Content integrity is maintained via deterministic local SHA-256 ledger.",
+      "verificationStatus": "local_only",
+      "registeredAt": "2026-10-22T13:52:39.889Z"
+    },
+    {
+      "id": "prf-sim-1792677124580",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Simulated Demo)",
+      "isSimulated": true,
+      "isRealOnChain": false,
+      "onChainStatus": "unsubmitted_simulated",
+      "statusNotice": "SIMULATED DEMONSTRATION: EVM RPC and signer keys are unconfigured. No transaction was broadcast to the network. Content integrity is maintained via deterministic local SHA-256 ledger.",
+      "verificationStatus": "local_only",
+      "registeredAt": "2026-10-22T13:52:04.579Z"
+    },
+    {
+      "id": "prf-sim-1792677113509",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Simulated Demo)",
+      "isSimulated": true,
+      "isRealOnChain": false,
+      "onChainStatus": "unsubmitted_simulated",
+      "statusNotice": "SIMULATED DEMONSTRATION: EVM RPC and signer keys are unconfigured. No transaction was broadcast to the network. Content integrity is maintained via deterministic local SHA-256 ledger.",
+      "verificationStatus": "local_only",
+      "registeredAt": "2026-10-22T13:51:53.509Z"
+    },
+    {
+      "id": "prf-tx-1792592979284",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Simulated Demo)",
+      "transactionHash": "0xb32e7dfe78f4265195a28434383fc070525c0ee78cdee593edbbce0f17de34ac",
+      "verificationStatus": "verified",
+      "registeredAt": "2026-10-21T14:29:39.284Z",
+      "explorerUrl": "https://amoy.polygonscan.com/tx/0xb32e7dfe78f4265195a28434383fc070525c0ee78cdee593edbbce0f17de34ac"
+    },
+    {
+      "id": "prf-tx-1792592910074",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Simulated Demo)",
+      "transactionHash": "0xb32e7dfe78f4265195a28434383fc070525c0ee78cdee593edbbce0f17de34ac",
+      "verificationStatus": "verified",
+      "registeredAt": "2026-10-21T14:28:30.074Z",
+      "explorerUrl": "https://amoy.polygonscan.com/tx/0xb32e7dfe78f4265195a28434383fc070525c0ee78cdee593edbbce0f17de34ac"
+    },
+    {
+      "id": "prf-tx-1792592853790",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Simulated Demo)",
+      "transactionHash": "0xb32e7dfe78f4265195a28434383fc070525c0ee78cdee593edbbce0f17de34ac",
+      "verificationStatus": "verified",
+      "registeredAt": "2026-10-21T14:27:33.790Z",
+      "explorerUrl": "https://amoy.polygonscan.com/tx/0xb32e7dfe78f4265195a28434383fc070525c0ee78cdee593edbbce0f17de34ac"
+    },
+    {
+      "id": "prf-tx-1792591443723",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Chain ID: 80002)",
+      "transactionHash": "0xe89e9c82e17e129a31130148e7a0571d770f6c2cd624978debfb4749a6fe9487",
+      "verificationStatus": "verified",
+      "registeredAt": "2026-10-21T14:04:03.723Z",
+      "explorerUrl": "https://amoy.polygonscan.com/tx/0xe89e9c82e17e129a31130148e7a0571d770f6c2cd624978debfb4749a6fe9487"
+    },
+    {
+      "id": "prf-tx-1792590016411",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Chain ID: 80002)",
+      "transactionHash": "0xe89e9c82e17e129a31130148e7a0571d770f6c2cd624978debfb4749a6fe9487",
+      "verificationStatus": "verified",
+      "registeredAt": "2026-10-21T13:40:16.411Z",
+      "explorerUrl": "https://amoy.polygonscan.com/tx/0xe89e9c82e17e129a31130148e7a0571d770f6c2cd624978debfb4749a6fe9487"
+    },
+    {
+      "id": "prf-tx-1792160766454",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Chain ID: 80002)",
+      "transactionHash": "0xe89e9c82e17e129a31130148e7a0571d770f6c2cd624978debfb4749a6fe9487",
+      "verificationStatus": "verified",
+      "registeredAt": "2026-10-16T14:26:06.454Z",
+      "explorerUrl": "https://amoy.polygonscan.com/tx/0xe89e9c82e17e129a31130148e7a0571d770f6c2cd624978debfb4749a6fe9487"
+    },
+    {
+      "id": "prf-tx-1792160752243",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Chain ID: 80002)",
+      "transactionHash": "0xe89e9c82e17e129a31130148e7a0571d770f6c2cd624978debfb4749a6fe9487",
+      "verificationStatus": "verified",
+      "registeredAt": "2026-10-16T14:25:52.243Z",
+      "explorerUrl": "https://amoy.polygonscan.com/tx/0xe89e9c82e17e129a31130148e7a0571d770f6c2cd624978debfb4749a6fe9487"
+    },
+    {
+      "id": "prf-seed-01",
+      "evidenceSnapshotId": "ev-seed-chennai-01",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "6bbd71228602f05ec4f80cc44b1bc4af28cb9679009f6d6f59159f89ad044437",
+      "proofType": "testnet_anchor",
+      "network": "Polygon Amoy Testnet (Chain ID: 80002)",
+      "transactionHash": "0x3e8a49c6b75822b1f834d8ef51d7e29cb16f3879aa9cf59074b120c18408542a",
+      "verificationStatus": "verified",
+      "registeredAt": "2026-10-16T08:05:00.000Z",
+      "explorerUrl": "https://amoy.polygonscan.com/tx/0x3e8a49c6b75822b1f834d8ef51d7e29cb16f3879aa9cf59074b120c18408542a"
+    },
+    {
+      "id": "prf-seed-02",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "hashAlgorithm": "SHA-256",
+      "registeredHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+      "proofType": "local_cryptographic",
+      "verificationStatus": "local_only",
+      "registeredAt": "2026-10-16T11:00:00.000Z"
+    }
+  ],
+  "refresh_runs": [
+    {
+      "id": "ref-1792836979904",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:16:18.820Z",
+      "completedAt": "2026-10-24T10:16:19.904Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836322953",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:22.546Z",
+      "completedAt": "2026-10-24T10:05:22.953Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836321518",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:21.272Z",
+      "completedAt": "2026-10-24T10:05:21.518Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836320514",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:20.284Z",
+      "completedAt": "2026-10-24T10:05:20.514Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836319598",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:19.342Z",
+      "completedAt": "2026-10-24T10:05:19.598Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836318558",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:18.306Z",
+      "completedAt": "2026-10-24T10:05:18.558Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836317598",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:17.343Z",
+      "completedAt": "2026-10-24T10:05:17.598Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836316563",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:16.328Z",
+      "completedAt": "2026-10-24T10:05:16.563Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836315620",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:15.353Z",
+      "completedAt": "2026-10-24T10:05:15.620Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836314596",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:14.305Z",
+      "completedAt": "2026-10-24T10:05:14.596Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836313614",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:13.317Z",
+      "completedAt": "2026-10-24T10:05:13.614Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836312639",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:12.371Z",
+      "completedAt": "2026-10-24T10:05:12.639Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836311585",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:11.222Z",
+      "completedAt": "2026-10-24T10:05:11.585Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836310615",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:10.238Z",
+      "completedAt": "2026-10-24T10:05:10.615Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836309531",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:09.222Z",
+      "completedAt": "2026-10-24T10:05:09.531Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836308538",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:08.305Z",
+      "completedAt": "2026-10-24T10:05:08.539Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836307602",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:07.350Z",
+      "completedAt": "2026-10-24T10:05:07.602Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836306505",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:06.273Z",
+      "completedAt": "2026-10-24T10:05:06.505Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836305573",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:05.267Z",
+      "completedAt": "2026-10-24T10:05:05.573Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836304611",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:04.296Z",
+      "completedAt": "2026-10-24T10:05:04.611Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836303767",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:03.531Z",
+      "completedAt": "2026-10-24T10:05:03.767Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836302998",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:02.744Z",
+      "completedAt": "2026-10-24T10:05:02.998Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836302338",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:02.098Z",
+      "completedAt": "2026-10-24T10:05:02.338Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836301601",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:01.364Z",
+      "completedAt": "2026-10-24T10:05:01.601Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836300935",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:05:00.698Z",
+      "completedAt": "2026-10-24T10:05:00.935Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836300253",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:59.930Z",
+      "completedAt": "2026-10-24T10:05:00.253Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836299361",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:59.056Z",
+      "completedAt": "2026-10-24T10:04:59.361Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836298569",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:58.297Z",
+      "completedAt": "2026-10-24T10:04:58.569Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836297545",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:57.265Z",
+      "completedAt": "2026-10-24T10:04:57.545Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836296737",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:56.307Z",
+      "completedAt": "2026-10-24T10:04:56.737Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836295063",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:54.696Z",
+      "completedAt": "2026-10-24T10:04:55.063Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836294119",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:53.723Z",
+      "completedAt": "2026-10-24T10:04:54.119Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836292998",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:52.576Z",
+      "completedAt": "2026-10-24T10:04:52.998Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836291924",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:51.532Z",
+      "completedAt": "2026-10-24T10:04:51.924Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836290847",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:50.442Z",
+      "completedAt": "2026-10-24T10:04:50.847Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836289819",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:49.498Z",
+      "completedAt": "2026-10-24T10:04:49.819Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836288894",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:48.511Z",
+      "completedAt": "2026-10-24T10:04:48.894Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836287973",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:47.600Z",
+      "completedAt": "2026-10-24T10:04:47.974Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836287051",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:46.693Z",
+      "completedAt": "2026-10-24T10:04:47.051Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836285690",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:45.370Z",
+      "completedAt": "2026-10-24T10:04:45.690Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836281762",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:41.523Z",
+      "completedAt": "2026-10-24T10:04:41.762Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836278043",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:37.718Z",
+      "completedAt": "2026-10-24T10:04:38.043Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836275173",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:34.859Z",
+      "completedAt": "2026-10-24T10:04:35.173Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836272347",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:32.113Z",
+      "completedAt": "2026-10-24T10:04:32.347Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836268329",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:28.035Z",
+      "completedAt": "2026-10-24T10:04:28.329Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836264410",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:24.087Z",
+      "completedAt": "2026-10-24T10:04:24.410Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836260693",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:20.210Z",
+      "completedAt": "2026-10-24T10:04:20.693Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836256357",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:16.122Z",
+      "completedAt": "2026-10-24T10:04:16.357Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836252507",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:12.247Z",
+      "completedAt": "2026-10-24T10:04:12.507Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836248410",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:08.167Z",
+      "completedAt": "2026-10-24T10:04:08.410Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836244331",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:04.071Z",
+      "completedAt": "2026-10-24T10:04:04.331Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836240532",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:04:00.232Z",
+      "completedAt": "2026-10-24T10:04:00.532Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836237673",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:03:57.431Z",
+      "completedAt": "2026-10-24T10:03:57.673Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836234890",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:03:54.376Z",
+      "completedAt": "2026-10-24T10:03:54.890Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836231973",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:03:51.628Z",
+      "completedAt": "2026-10-24T10:03:51.973Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836228888",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:03:48.542Z",
+      "completedAt": "2026-10-24T10:03:48.888Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836226070",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:03:45.712Z",
+      "completedAt": "2026-10-24T10:03:46.070Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836223215",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:03:42.890Z",
+      "completedAt": "2026-10-24T10:03:43.215Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836220395",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:03:40.145Z",
+      "completedAt": "2026-10-24T10:03:40.395Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836217696",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:03:37.224Z",
+      "completedAt": "2026-10-24T10:03:37.696Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836213291",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:03:33.063Z",
+      "completedAt": "2026-10-24T10:03:33.291Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836209531",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:03:28.081Z",
+      "completedAt": "2026-10-24T10:03:29.531Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836203861",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:03:23.119Z",
+      "completedAt": "2026-10-24T10:03:23.861Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836199391",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:03:19.139Z",
+      "completedAt": "2026-10-24T10:03:19.391Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836195486",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:03:15.158Z",
+      "completedAt": "2026-10-24T10:03:15.486Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836191512",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:03:11.211Z",
+      "completedAt": "2026-10-24T10:03:11.512Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836187331",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:03:07.101Z",
+      "completedAt": "2026-10-24T10:03:07.331Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836183338",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:03:03.107Z",
+      "completedAt": "2026-10-24T10:03:03.338Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836179431",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:02:59.039Z",
+      "completedAt": "2026-10-24T10:02:59.431Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836175706",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:02:55.387Z",
+      "completedAt": "2026-10-24T10:02:55.706Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836172978",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:02:51.231Z",
+      "completedAt": "2026-10-24T10:02:52.978Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836161196",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:02:40.847Z",
+      "completedAt": "2026-10-24T10:02:41.196Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836157625",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:02:37.313Z",
+      "completedAt": "2026-10-24T10:02:37.625Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836154751",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:02:34.485Z",
+      "completedAt": "2026-10-24T10:02:34.751Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836151993",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:02:30.947Z",
+      "completedAt": "2026-10-24T10:02:31.993Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836143257",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:02:23.009Z",
+      "completedAt": "2026-10-24T10:02:23.257Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836139186",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:02:18.811Z",
+      "completedAt": "2026-10-24T10:02:19.186Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836136042",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:02:15.801Z",
+      "completedAt": "2026-10-24T10:02:16.042Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836133351",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:02:13.111Z",
+      "completedAt": "2026-10-24T10:02:13.351Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836130491",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:02:10.247Z",
+      "completedAt": "2026-10-24T10:02:10.491Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836127619",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:02:07.302Z",
+      "completedAt": "2026-10-24T10:02:07.619Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836124717",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:02:04.332Z",
+      "completedAt": "2026-10-24T10:02:04.717Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836121640",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:02:01.316Z",
+      "completedAt": "2026-10-24T10:02:01.640Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836117457",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:01:57.202Z",
+      "completedAt": "2026-10-24T10:01:57.457Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836113301",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:01:53.026Z",
+      "completedAt": "2026-10-24T10:01:53.301Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836109589",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:01:49.247Z",
+      "completedAt": "2026-10-24T10:01:49.589Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836106594",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:01:46.275Z",
+      "completedAt": "2026-10-24T10:01:46.594Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836103508",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:01:43.262Z",
+      "completedAt": "2026-10-24T10:01:43.508Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836099536",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:01:39.232Z",
+      "completedAt": "2026-10-24T10:01:39.536Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836095546",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:01:35.210Z",
+      "completedAt": "2026-10-24T10:01:35.546Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836091514",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:01:31.156Z",
+      "completedAt": "2026-10-24T10:01:31.514Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836088395",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:01:28.152Z",
+      "completedAt": "2026-10-24T10:01:28.395Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836085458",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:01:25.210Z",
+      "completedAt": "2026-10-24T10:01:25.458Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836082417",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:01:22.148Z",
+      "completedAt": "2026-10-24T10:01:22.417Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836080535",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:01:20.278Z",
+      "completedAt": "2026-10-24T10:01:20.535Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836079791",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:01:19.226Z",
+      "completedAt": "2026-10-24T10:01:19.791Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836078579",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:01:18.263Z",
+      "completedAt": "2026-10-24T10:01:18.579Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836077778",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:01:17.469Z",
+      "completedAt": "2026-10-24T10:01:17.778Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836077008",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:01:16.763Z",
+      "completedAt": "2026-10-24T10:01:17.008Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    },
+    {
+      "id": "ref-1792836076266",
+      "sourceId": "src-open-meteo",
+      "startedAt": "2026-10-24T10:01:16.003Z",
+      "completedAt": "2026-10-24T10:01:16.266Z",
+      "status": "success",
+      "recordsRetrieved": 1
+    }
+  ],
+  "evidence_changes": [
+    {
+      "id": "chg-seed-01",
+      "evidenceSnapshotId": "ev-seed-chennai-02",
+      "previousSnapshotId": "ev-seed-chennai-01",
+      "changeType": "value_shift",
+      "changeSummary": "Temperature shifted by +0.7°C; Humidity changed to 72%; Wind speed increased to 21.2 km/h",
+      "changedFields": {
+        "temperature": {
+          "previous": 31.8,
+          "current": 32.5
+        },
+        "humidity": {
+          "previous": 68,
+          "current": 72
+        },
+        "windSpeed": {
+          "previous": 18.4,
+          "current": 21.2
+        }
+      },
+      "detectedAt": "2026-10-16T11:00:00.000Z"
+    }
+  ],
+  "actions": [
+    {
+      "id": "act-chennai-heat-01",
+      "title": {
+        "en": "Deploy Shaded Hydration Points at High-Traffic Transit Hubs",
+        "ta": "அதிக நடமாட்டம் உள்ள போக்குவரத்து மையங்களில் நிழல் மற்றும் நீர் பந்தல்கள் அமைத்தல்"
+      },
+      "category": "heat_preparedness",
+      "intendedBeneficiary": "Transit Commuters, Outdoor Delivery Workers, and Street Vendors",
+      "locationContext": "Chennai Central, Guindy, and Koyambedu Junctions",
+      "evidenceBasis": {
+        "metric": "Apparent Temperature",
+        "observedValue": "34.8°C (Humidex Range)",
+        "condition": "Thermal index consistently exceeds safe sustained outdoor exertion threshold (>32°C)"
+      },
+      "whyItMatters": {
+        "en": "In high coastal humidity, sweat cannot evaporate efficiently. Ambient 32°C feels like 38°C+, tripling acute heat-exhaustion incidence among outdoor workers.",
+        "ta": "கடலோர ஈரப்பதம் காரணமாக வியர்வை எளிதில் ஆவியாகாது. 32°C வெப்பநிலை 38°C ஆக உணரப்பட்டு, தொழிலாளர்களுக்கு வெப்ப மயக்கம் ஏற்படுத்தும்."
+      },
+      "difficulty": "Low",
+      "estimatedCostCategory": "Low ($)",
+      "timeframe": "Immediate (24 - 48 Hours)",
+      "expectedBenefit": {
+        "en": "Prevents acute dehydration and heat syncope for an estimated 4,000+ daily pedestrians during peak solar hours (11:30 AM - 3:30 PM).",
+        "ta": "நண்பகல் நேரங்களில் 4,000+ பொதுமக்களுக்கு நீர்ச்சத்து குறைவு மற்றும் வெப்ப மயக்கத்தை தடுக்கிறது."
+      },
+      "metricForProgress": "Operational shaded kiosks with clean drinking water verified by community spot-checks",
+      "methodology": "National Disaster Management Authority (NDMA) Heat Wave Action Guidelines 2024",
+      "status": "completed",
+      "statusUpdatedAt": "2026-10-24T09:57:17.162Z",
+      "cryptographicReceipt": {
+        "receiptId": "rcpt-1792835837161-ossc",
+        "actionId": "act-chennai-heat-01",
+        "actionTitle": "Deploy Shaded Hydration Points at High-Traffic Transit Hubs",
+        "completedAt": "2026-10-24T09:57:17.161Z",
+        "supportingEvidenceSnapshotId": "ev-seed-chennai-02",
+        "supportingEvidenceHash": "837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e",
+        "canonicalReceiptPayload": "{\"actionId\":\"act-chennai-heat-01\",\"actionTitle\":\"Deploy Shaded Hydration Points at High-Traffic Transit Hubs\",\"category\":\"heat_preparedness\",\"completedAt\":\"2026-10-24T09:57:17.161Z\",\"location\":\"Chennai Central, Guindy, and Koyambedu Junctions\",\"metricForProgress\":\"Operational shaded kiosks with clean drinking water verified by community spot-checks\",\"receiptId\":\"rcpt-1792835837161-ossc\",\"status\":\"completed\",\"supportingEvidenceHash\":\"837a4f34d693af2df5227e1e8d2c2e593eafac880de75144e96ec3caa55be94e\",\"supportingEvidenceSnapshotId\":\"ev-seed-chennai-02\"}",
+        "receiptSha256": "85af89f3a6648b2fa9f6b27ef9aa0d5ff5753b1079237413735d4a998b00639c",
+        "disclaimer": "User-Reported Action Completion: This cryptographic receipt proves that this specific action record has remained unaltered since generation. It certifies digital data integrity of the user-reported completion; it does not replace independent on-ground physical inspection or verified environmental sensor impact."
+      }
+    },
+    {
+      "id": "act-chennai-roof-02",
+      "title": {
+        "en": "High-Albedo Cool Roof Coating for Residential Slums and Schools",
+        "ta": "குடியிருப்புகள் மற்றும் பள்ளிகளுக்கு வெப்பத்தை எதிரொலிக்கும் கூரை பூச்சு"
+      },
+      "category": "energy_efficiency",
+      "intendedBeneficiary": "Vulnerable Low-Income Households without Air Conditioning",
+      "locationContext": "Vyasarapadi and Perambur Neighborhoods, North Chennai",
+      "evidenceBasis": {
+        "metric": "Surface Solar Irradiance & Indoor Heat",
+        "observedValue": "UV Index 8.2 & 33.5°C Ambient",
+        "condition": "Uninsulated tin/asbestos sheet roofing elevates indoor temperatures up to 6°C above ambient air."
+      },
+      "whyItMatters": {
+        "en": "High-reflectance solar coatings (albedo > 0.70) reflect 80% of incoming solar radiation, dropping indoor ambient temps by 3.5°C to 5.0°C without power consumption.",
+        "ta": "சூரிய கதிர்வீச்சை 80% எதிரொலிப்பதன் மூலம் உட்புற வெப்பநிலையை மின்சார பயன்பாடு இன்றி 3.5°C முதல் 5.0°C வரை குறைக்கிறது."
+      },
+      "difficulty": "Medium",
+      "estimatedCostCategory": "Moderate ($$)",
+      "timeframe": "Medium Term (1 - 2 Weeks)",
+      "expectedBenefit": {
+        "en": "Reduces indoor heat stress and nocturnal heat retention for 120+ households; mitigates urban heat island effect.",
+        "ta": "120+ குடும்பங்களுக்கு உட்புற வெப்ப தாக்கத்தை குறைக்கிறது; நகர்ப்புற வெப்ப தீவு விளைவை மட்டுப்படுத்துகிறது."
+      },
+      "metricForProgress": "Square meters of high-albedo solar coating applied and verified with pre/post infrared thermometer readings",
+      "methodology": "Ahmedabad & Telangana Cool Roof Policy Benchmark Guidelines",
+      "status": "in_progress",
+      "statusUpdatedAt": "2026-10-20T14:15:00.000Z"
+    },
+    {
+      "id": "act-chennai-rain-03",
+      "title": {
+        "en": "Clean Debris from Stormwater Grates & Rainwater Inlets Prior to Monsoon Onset",
+        "ta": "மழைக்காலத்திற்கு முன் மழைநீர் வடிகால் மற்றும் சேகரிப்பு தொட்டிகளில் குப்பைகளை அகற்றுதல்"
+      },
+      "category": "rainfall_preparedness",
+      "intendedBeneficiary": "Velachery, Madipakkam, and Pallikaranai Flood-Prone Catchments",
+      "locationContext": "South Chennai Catchment Basin & Micro-Canals",
+      "evidenceBasis": {
+        "metric": "Precipitation Screening Threshold",
+        "observedValue": "Current 0.0mm; Season Forecast: NE Monsoon Inflow",
+        "condition": "Pre-monsoon clearance is critical before convective rainfall events exceed 25mm/hr percolation limits."
+      },
+      "whyItMatters": {
+        "en": "Over 65% of localized street-level waterlogging in flat coastal plains is initiated by plastic debris blocking kerb inlets, reducing hydraulic discharge capacity by 80%.",
+        "ta": "வடிகால்களில் பிளாஸ்டிக் அடைப்பதால் நீர் வெளியேறும் வேகம் 80% குறைகிறது, இதுவே சாலைகளில் வெள்ளம் தேங்க முக்கிய காரணமாகிறது."
+      },
+      "difficulty": "Medium",
+      "estimatedCostCategory": "Free / Zero-Cost",
+      "timeframe": "Immediate (Next 72 Hours)",
+      "expectedBenefit": {
+        "en": "Ensures unimpeded gravity drainage during high-intensity tropical downpours; protects ground-floor residents.",
+        "ta": "கனமழையின் போது வெள்ள நீர் தடையின்றி வடிய உதவுகிறது; தரைத்தள குடியிருப்பாளர்களை பாதுகாக்கிறது."
+      },
+      "metricForProgress": "Number of cleared storm grates documented with timestamped geo-referenced photos",
+      "methodology": "Greater Chennai Corporation (GCC) Pre-Monsoon Preparedness Protocol",
+      "status": "planned",
+      "statusUpdatedAt": "2026-10-21T04:00:00.000Z"
+    },
+    {
+      "id": "act-chennai-tree-04",
+      "title": {
+        "en": "Urban Shade Mapping and Native Miyawaki Micro-Forest Planting",
+        "ta": "நகர்ப்புற நிழல் வரைபடமாக்கல் மற்றும் நாட்டு மரங்கள் அடர்வனம் வளர்ப்பு"
+      },
+      "category": "tree_shade",
+      "intendedBeneficiary": "Urban School Children and Active Pedestrians",
+      "locationContext": "Sholinganallur IT Corridor & Velachery Inner Ring Road",
+      "evidenceBasis": {
+        "metric": "Satellite Thermal Surface Differential",
+        "observedValue": "+4.2°C Urban Heat Island Delta vs Coastal Baseline",
+        "condition": "Dense asphalt surface lacks vegetative canopy cover (<8% tree shade in surveyed quadrant)"
+      },
+      "whyItMatters": {
+        "en": "Mature native trees (Neem, Pongamia, Peepal) provide natural evaporative cooling, lowering ambient micro-temperatures by 2°C to 4°C at ground level.",
+        "ta": "நாட்டு மரங்கள் (வேம்பு, புங்கை, அரசு) இயற்கையான குளிர்ச்சியை வழங்கி, தரைமட்ட வெப்பநிலையை 2°C முதல் 4°C வரை குறைக்கின்றன."
+      },
+      "difficulty": "High",
+      "estimatedCostCategory": "Moderate ($$)",
+      "timeframe": "Ongoing Seasonal Campaign",
+      "expectedBenefit": {
+        "en": "Sequestering localized particulate matter (PM2.5/PM10), increasing soil water infiltration, and restoring natural shade.",
+        "ta": "காற்றிலுள்ள தூசுகளைக் குறைத்து, நிலத்தடி நீர் செறிவூட்டலை அதிகரித்து, இயற்கை நிழலை வழங்குகிறது."
+      },
+      "metricForProgress": "Number of native saplings planted with 90-day survival tracking via community audit",
+      "methodology": "Tamil Nadu Green Mission & Urban Forestry Standards",
+      "status": "in_progress",
+      "statusUpdatedAt": "2026-10-19T09:00:00.000Z"
+    }
+  ],
+  "challenges": [
+    {
+      "id": "chg-chennai-shade-01",
+      "title": {
+        "en": "Greater Chennai Shaded Pedestrian Corridor Audit",
+        "ta": "கிரேட்டர் சென்னை பாதசாரி நிழல் வழித்தட தணிக்கை"
+      },
+      "targetAudience": "Schools & Colleges",
+      "location": "Chennai (Anna Nagar, T. Nagar, Adyar, Velachery)",
+      "objective": {
+        "en": "Student teams survey bus stops, school walk-routes, and pedestrian pathways to identify unshaded thermal hotspots requiring tree canopies or transit shelters.",
+        "ta": "மாணவர்கள் பேருந்து நிறுத்தங்கள் மற்றும் பள்ளி நடைபாதைகளில் நிழல் இல்லாத பகுதிகளை அடையாளம் கண்டு அறிக்கை சமர்ப்பித்தல்."
+      },
+      "startDate": "2026-10-01",
+      "endDate": "2026-11-15",
+      "measurementMethod": "Thermometer surface surveys & photo-audit logs using ClimateLens mobile interface",
+      "baseline": "18% pedestrian shade coverage across survey zones",
+      "participantCount": 163,
+      "progressPercentage": 100,
+      "evidenceCount": 105,
+      "completionCriteria": "500 km of urban pedestrian pathways audited with verified coordinate markers",
+      "isDemoMode": true
+    },
+    {
+      "id": "chg-chennai-energy-02",
+      "title": {
+        "en": "Campus Peak Hour Energy Load Shift Challenge",
+        "ta": "கல்லூரி வளாக உச்சநேர மின்சார சுமை குறைப்பு சவால்"
+      },
+      "targetAudience": "Schools & Colleges",
+      "location": "Participating Engineering & Arts Colleges, Tamil Nadu",
+      "objective": {
+        "en": "Reduce non-essential HVAC and lighting load between 2:00 PM and 5:00 PM during extreme heat grid stress windows.",
+        "ta": "கடும் வெப்ப நேரங்களில் (பிற்பகல் 2:00 - 5:00) தேவையற்ற மின்சார பயன்பாட்டை குறைத்தல்."
+      },
+      "startDate": "2026-10-10",
+      "endDate": "2026-10-31",
+      "measurementMethod": "Smart meter delta logs & classroom energy ambassador logs",
+      "baseline": "Average 1,250 kWh afternoon peak load per campus",
+      "participantCount": 380,
+      "progressPercentage": 45,
+      "evidenceCount": 36,
+      "completionCriteria": "Minimum 15% reduction in afternoon peak energy consumption over 10 consecutive working days",
+      "isDemoMode": true
+    },
+    {
+      "id": "chg-chennai-water-03",
+      "title": {
+        "en": "Neighborhood Rainwater Percolation Well Integrity Check",
+        "ta": "குடியிருப்பு மழைநீர் சேகரிப்பு கட்டமைப்பு சரிபார்ப்பு இயக்கம்"
+      },
+      "targetAudience": "Residents & Neighborhoods",
+      "location": "Residential Welfare Associations across South Chennai",
+      "objective": {
+        "en": "Inspect household and apartment rainwater recharge pits to ensure sand/gravel filter beds are de-silted before monsoon showers.",
+        "ta": "மழைக்காலம் தொடங்கும் முன் குடியிருப்பு பகுதிகளில் மழைநீர் சேகரிப்பு தொட்டிகளை தூர்வாரி சுத்தம் செய்தல்."
+      },
+      "startDate": "2026-10-15",
+      "endDate": "2026-11-05",
+      "measurementMethod": "Community checklist verification with photographic before/after log",
+      "baseline": "42% of visited pits exhibited silt clogging or filter bypass",
+      "participantCount": 95,
+      "progressPercentage": 32,
+      "evidenceCount": 28,
+      "completionCriteria": "150 apartment complexes with functional, clean rainwater percolation structures",
+      "isDemoMode": true
+    }
+  ]
+}

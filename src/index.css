@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --color-midnight: #071722;
+  --color-deep-ocean: #0B2633;
+  --color-teal: #19B8A5;
+  --color-ice-cyan: #8CE6E0;
+  --color-cloud-white: #F3F8FA;
+  --color-muted-slate: #A7BAC4;
+  --color-alert-amber: #FFBF69;
+  --color-critical-red: #FF6268;
+
+  --color-glass-surface: rgba(11, 38, 51, 0.72);
+  --color-glass-border: rgba(140, 230, 224, 0.16);
+  --color-glass-highlight: rgba(255, 255, 255, 0.08);
+
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-midnight);
+  color: var(--color-cloud-white);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(25, 184, 165, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(140, 230, 224, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(11, 38, 51, 0.6) 0%, transparent 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Glassmorphism utility classes */
+.liquid-glass {
+  background: rgba(11, 38, 51, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(140, 230, 224, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(7, 23, 34, 0.45);
+}
+
+.liquid-glass-subtle {
+  background: rgba(11, 38, 51, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.liquid-glass-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.liquid-glass-hover:hover {
+  background: rgba(11, 38, 51, 0.85);
+  border-color: rgba(25, 184, 165, 0.4);
+  box-shadow: 0 12px 36px 0 rgba(25, 184, 165, 0.15);
+}
+
+.glow-teal {
+  box-shadow: 0 0 24px rgba(25, 184, 165, 0.3);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 24px rgba(140, 230, 224, 0.25);
+}
+
+/* Tabular numerals for telemetry and hashes */
+.tabular-numbers {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom dark atmospheric scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(7, 23, 34, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(25, 184, 165, 0.25);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(25, 184, 165, 0.5);
+}
