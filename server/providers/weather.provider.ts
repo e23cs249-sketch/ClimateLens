@@ -83,8 +83,10 @@ export async function fetchLiveWeatherData(
 
     if (wRes.status === 'fulfilled' && wRes.value.ok) {
       weatherJson = await wRes.value.json();
+    } else if (wRes.status === 'fulfilled') {
+      throw new Error(`Open-Meteo weather API returned HTTP ${wRes.value.status}. Retry shortly and check Open-Meteo service status.`);
     } else {
-      throw new Error('Open-Meteo weather API call failed or returned non-200');
+      throw new Error('Could not reach the Open-Meteo weather API. Check server outbound network access and retry.');
     }
 
     if (aqiRes.status === 'fulfilled' && aqiRes.value.ok) {

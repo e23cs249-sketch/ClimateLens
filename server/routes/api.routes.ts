@@ -48,8 +48,10 @@ router.get('/locations/search', async (req: Request, res: Response) => {
 // Live weather and atmospheric data
 router.get('/weather', async (req: Request, res: Response) => {
   try {
-    const lat = parseFloat(req.query.lat as string) || 13.0827; // Default: Chennai, India
-    const lon = parseFloat(req.query.lon as string) || 80.2707;
+    const latQuery = req.query.lat as string | undefined;
+    const lonQuery = req.query.lon as string | undefined;
+    const lat = latQuery === undefined ? 13.0827 : parseFloat(latQuery);
+    const lon = lonQuery === undefined ? 80.2707 : parseFloat(lonQuery);
     const location = (req.query.location as string) || 'Chennai, Tamil Nadu, India';
 
     if (isNaN(lat) || isNaN(lon) || lat < -90 || lat > 90 || lon < -180 || lon > 180) {
@@ -86,7 +88,9 @@ router.get('/weather', async (req: Request, res: Response) => {
     res.status(502).json({
       error: {
         code: 'UPSTREAM_UNAVAILABLE',
-        message: 'External meteorological provider (Open-Meteo) temporarily unreachable or timed out.',
+        message: err instanceof Error
+          ? err.message
+          : 'Open-Meteo weather request failed unexpectedly. Retry shortly.',
       },
     });
   }

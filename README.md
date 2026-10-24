@@ -268,6 +268,14 @@ Open the local address printed in the terminal.
 
 If the project uses a different script or port, follow the actual configuration rather than assuming a particular address.
 
+### Deploy to Vercel
+
+The root `vercel.json` builds the Vite frontend into `dist` and rewrites `/api/*` requests to the Node.js function in `api/index.ts`, which serves the existing Express API routes. The API uses the same-origin `/api/v1` paths locally and in production.
+
+Vite 8 requires Node.js `^20.19.0` or `>=22.12.0`. Weather data comes from Open-Meteo and does not require an API key. `GEMINI_API_KEY` is optional for AI explanations; without it, the application uses its deterministic explanation fallback.
+
+The JSON data file is used as the Vercel function's seed data. Runtime writes go to `/tmp`, which is temporary and is not durable across cold starts or separate function instances. Use a persistent external database before relying on production evidence, action, or challenge updates as durable records.
+
 ### Optional blockchain configuration
 
 The blockchain anchoring workflow uses the following configuration variables:

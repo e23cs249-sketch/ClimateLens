@@ -27,6 +27,7 @@ interface MyAreaPageProps {
   weather: WeatherData | null;
   isLoading: boolean;
   error: string | null;
+  onRetryWeather: () => void;
   onSelectLocation: (loc: { label: string; latitude: number; longitude: number }) => void;
   onSealEvidence: () => void;
   isSealing: boolean;
@@ -39,6 +40,7 @@ export const MyAreaPage: React.FC<MyAreaPageProps> = ({
   weather,
   isLoading,
   error,
+  onRetryWeather,
   onSelectLocation,
   onSealEvidence,
   isSealing,
@@ -69,7 +71,7 @@ export const MyAreaPage: React.FC<MyAreaPageProps> = ({
         </div>
         <p>{error || 'No weather telemetry is currently loaded.'}</p>
         <button
-          onClick={() => window.location.reload()}
+          onClick={onRetryWeather}
           className="px-4 py-2 bg-[#19B8A5] text-[#071722] font-bold rounded-xl text-xs"
         >
           Retry Connection

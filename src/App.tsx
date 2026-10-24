@@ -191,6 +191,7 @@ export default function App() {
               weather={weather}
               isLoading={isLoadingWeather}
               error={weatherError}
+              onRetryWeather={() => loadWeather(location)}
               onSelectLocation={handleSelectLocation}
               onSealEvidence={handleSealEvidence}
               isSealing={isSealing}

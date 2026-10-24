@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import apiRouter from './server/routes/api.routes.ts';
+import { createApiApp } from './server/api-app.ts';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -10,15 +10,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 async function startServer() {
-  const app = express();
+  const app = createApiApp();
   const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
-
-  app.use(express.json({ limit: '5mb' }));
-
-  // Mount API routes
-  app.use('/api/v1', apiRouter);
-  // Also alias /api to /api/v1 for ease of use
-  app.use('/api', apiRouter);
 
   // In development, hook up Vite dev server middlewares
   if (process.env.NODE_ENV !== 'production') {

@@ -20,7 +20,8 @@ interface DatabaseState {
   challenges: CommunityChallenge[];
 }
 
-const DB_DIR = path.resolve(process.cwd(), 'data');
+const SEED_DB_FILE = path.resolve(process.cwd(), 'data', 'climatelens.json');
+const DB_DIR = process.env.VERCEL ? '/tmp' : path.dirname(SEED_DB_FILE);
 const DB_FILE = path.join(DB_DIR, 'climatelens.json');
 
 const INITIAL_SOURCES: ClimateSource[] = [
@@ -276,11 +277,12 @@ class Database {
   }
 
   private loadState(): DatabaseState {
-    if (fs.existsSync(DB_FILE)) {
+    const stateFile = fs.existsSync(DB_FILE) ? DB_FILE : SEED_DB_FILE;
+    if (fs.existsSync(stateFile)) {
       try {
-        const raw = fs.readFileSync(DB_FILE, 'utf-8');
+        const raw = fs.readFileSync(stateFile, 'utf-8');
         const parsed = JSON.parse(raw);
-        return {
+        const state = {
           sources: parsed.sources || INITIAL_SOURCES,
           evidence_snapshots: parsed.evidence_snapshots || [],
           integrity_proofs: parsed.integrity_proofs || [],
@@ -289,6 +291,10 @@ class Database {
           actions: parsed.actions && parsed.actions.length > 0 ? parsed.actions : INITIAL_ACTIONS,
           challenges: parsed.challenges && parsed.challenges.length > 0 ? parsed.challenges : INITIAL_CHALLENGES,
         };
+        if (stateFile !== DB_FILE) {
+          this.persist(state);
+        }
+        return state;
       } catch (err) {
         console.error('Error reading database file, resetting to defaults:', err);
       }

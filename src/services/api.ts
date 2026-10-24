@@ -184,7 +184,12 @@ export async function fetchWeather(lat: number, lon: number, location: string): 
   const res = await fetch(`${API_BASE}/weather?${params}`);
   if (!res.ok) {
     const errorJson = await res.json().catch(() => ({}));
-    throw new Error(errorJson?.error?.message || `Failed to fetch weather: ${res.status}`);
+    const message = errorJson?.error?.message || (
+      res.status === 404
+        ? 'ClimateLens weather API returned HTTP 404. Check that the API function and Vercel routing configuration are deployed.'
+        : `Weather request failed with HTTP ${res.status}. Retry shortly.`
+    );
+    throw new Error(message);
   }
   return res.json();
 }
